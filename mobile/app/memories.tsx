@@ -7,6 +7,7 @@ import * as SecureStore from 'expo-secure-store';
 import { useEffect, useState } from 'react';
 import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
 import { api } from '../src/assets/lib/api';
 import NLWLogo from '../src/assets/nlw-spacetime-logo.svg';
 
