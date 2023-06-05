@@ -5,6 +5,7 @@ import Cookie from 'js-cookie'
 import { Camera } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { FormEvent } from 'react'
+import InputMask from 'react-input-mask'
 import { MediaPicker } from './MediaPicker'
 
 export function NewMemoryForm() {
@@ -14,6 +15,8 @@ export function NewMemoryForm() {
     event.preventDefault()
 
     const formData = new FormData(event.currentTarget)
+    const date: any = formData.get('createdAt')
+    const dateIso = new Date(date).toISOString()
 
     const fileToUpload = formData.get('coverUrl')
 
@@ -36,6 +39,7 @@ export function NewMemoryForm() {
         coverUrl,
         content: formData.get('content'),
         isPublic: formData.get('isPublic'),
+        createdAt: dateIso,
       },
       {
         headers: {
@@ -72,6 +76,12 @@ export function NewMemoryForm() {
           />
           Tornar memória pública
         </label>
+
+        <InputMask
+          mask="99/99/9999"
+          name="createdAt"
+          className="h-10 w-[120px] rounded border-gray-400 bg-gray-700 px-4 py-2 text-gray-100 placeholder:text-gray-400 focus:ring-0"
+        />
       </div>
 
       <MediaPicker />
