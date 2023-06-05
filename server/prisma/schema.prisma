@@ -20,12 +20,12 @@ model User {
 // banco de dados como se fosse um commit
 
 model Memory {
-    id        String   @id @default(uuid())
+    id        String  @id @default(uuid())
     userId    String
     coverUrl  String
     content   String
-    isPublic  Boolean  @default(false)
-    createdAt DateTime @default(now())
+    isPublic  Boolean @default(false)
+    createdAt String
 
     user User @relation(fields: [userId], references: [id])
 }
