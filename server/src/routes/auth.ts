@@ -1,16 +1,37 @@
 /* eslint-disable prettier/prettier */
-import axios from 'axios'
-import { FastifyInstance } from 'fastify'
-import { z } from 'zod'
-import { prisma } from '../lib/prisma'
+import axios from 'axios';
+import { FastifyInstance } from 'fastify';
+import { z } from 'zod';
+import parseSchema from "zod-to-json-schema";
+import { prisma } from '../lib/prisma';
 
 export async function authRoutes(app: FastifyInstance) {
-    app.post('/register', async (request) => {
-        const bodySchema = z.object({
-            code: z.string(),
-        })
 
-        const { code } = bodySchema.parse(request.body)
+    const registerSchema = z.object({
+        code: z.string(),
+      });
+
+
+    app.post('/register', {
+        schema: {
+            description: 'Autenticação na aplicação utilizando Github',
+            tags: ['Autentication'],
+            hide: true,
+            body: parseSchema(registerSchema),
+            response: {
+              200: {
+                description: 'Obtém o token de acesso',
+                type: 'object',
+                properties: {
+                  token: { type: 'string' },
+                },
+              },
+            },
+          },
+
+        handler: async (request) => {
+
+        const { code } = registerSchema.parse(request.body)
 
         const accessTokenResponse = await axios.post(
             'https://github.com/login/oauth/access_token',
@@ -71,5 +92,5 @@ export async function authRoutes(app: FastifyInstance) {
         return {
             token,
         }
-    })
+    }})
 }
