@@ -10,8 +10,22 @@ const pump = promisify(pipeline) // pipeline - verifica o processo
                                 // de stream
 
 export async function uploadRoutes(app: FastifyInstance) {
-    app.post('/upload', async (request, reply) => {
-       
+    app.post('/upload',  {
+       schema: {
+        description: 'Upload de Imagem',
+        tags: ['Autentication'],
+        hide: true,
+        response: {
+            200: {
+              description: 'Retorna a url do arquivo salvo',
+              type: 'object',
+              properties: {
+                fileUrl: { type: 'string' },
+              },
+            },
+          },
+       },
+        handler: async (request, reply) => {
         const upload = await request.file({
             limits: {
                 fileSize: 5_242_880 // 5mb
@@ -48,5 +62,5 @@ export async function uploadRoutes(app: FastifyInstance) {
         return {
             fileUrl
         }
-    })
+    }})
 }
