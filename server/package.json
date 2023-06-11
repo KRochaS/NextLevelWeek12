@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "lint": "eslint src --ext .ts --fix"
+    "lint": "eslint src --ext .ts --fix",
+    "build": "tsup src",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +20,7 @@
     "@types/node": "20.1.4",
     "eslint": "^8.40.0",
     "prisma": "^4.14.0",
+    "tsup": "^6.7.0",
     "tsx": "3.12.7",
     "typescript": "5.0.4"
   },
@@ -25,7 +31,7 @@
     "@fastify/static": "^6.10.1",
     "@fastify/swagger": "^8.5.1",
     "@fastify/swagger-ui": "^1.8.1",
-    "@prisma/client": "^4.14.0",
+    "@prisma/client": "^4.15.0",
     "axios": "^1.4.0",
     "dotenv": "^16.0.3",
     "fastify": "4.17.0",
