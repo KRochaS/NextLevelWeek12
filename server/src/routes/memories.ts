@@ -15,42 +15,44 @@ export async function memoriesRoutes(app: FastifyInstance) {
         await request.jwtVerify();
     })
 
-    app.get('/memories',  {
+    app.get('/memories', {
         schema: {
             description: 'Lista de memórias',
             tags: ['memories'],
             response: {
-              200: {
-                description: 'Obtém de memórias',
-                type: 'object',
-                properties: {
-                  token: { type: 'string' },
-                  id: { type: 'string' },
-                  coverUrl: { type: 'string' },
-                  excerpt: { type: 'string' },
-                  createdAt: { type: 'string' }
+                200: {
+                    description: 'Obtém de memórias',
+                    type: 'array',
+                    properties: {
+                          token: { type: 'string' },
+                        id: { type: 'string' },
+                        coverUrl: { type: 'string' },
+                        excerpt: { type: 'string' },
+                        createdAt: { type: 'string' }
+                    },
                 },
-              },
             },
-          },
+        },
+
         handler: async (request) => {
-        const memories = await prisma.memory.findMany({
-            where: {
-                userId: request.user.sub
-            },
-            orderBy: {
-                createdAt: 'asc',
+            const memories = await prisma.memory.findMany({
+               where: {
+                    userId: request.user.sub,
+               },
+                orderBy: {
+                    createdAt: 'asc'
+                }
+            })
+            return memories.map((memory) => {
+                return {
+                  id: memory.id,
+                  coverUrl: memory.coverUrl,
+                  excerpt: memory.content.substring(0, 115).concat('...'),
+                  createdAt: memory.createdAt,
+                }
+              })
             }
-        })
-        return memories.map((memory) => {
-            return {
-                id: memory.id,
-                coverUrl: memory.coverUrl,
-                excerpt: memory.content.substring(0, 115).concat('...'),
-                createdAt: memory.createdAt
-            }
-        })
-    }})
+            })
 
 
     const paramsSchemaGetMemory = z.object({
@@ -77,7 +79,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
         },
     });
 
-   
+
     const bodySchema = z.object({
         content: z.string(),
         coverUrl: z.string(),
@@ -118,41 +120,42 @@ export async function memoriesRoutes(app: FastifyInstance) {
             params: parseSchema(paramsSchemaMemory),
         },
         handler: async (request, reply) => {
-    
 
-        const { id } = paramsSchema.parse(request.params)
 
-        const bodySchema = z.object({
-            content: z.string(),
-            coverUrl: z.string(),
-            isPublic: z.coerce.boolean().default(false)
-        })
+            const { id } = paramsSchema.parse(request.params)
 
-        const { content, coverUrl, isPublic } = bodySchema.parse(request.body)
+            const bodySchema = z.object({
+                content: z.string(),
+                coverUrl: z.string(),
+                isPublic: z.coerce.boolean().default(false)
+            })
 
-        let memory = await prisma.memory.findUniqueOrThrow({
-            where: {
-                id,
+            const { content, coverUrl, isPublic } = bodySchema.parse(request.body)
+
+            let memory = await prisma.memory.findUniqueOrThrow({
+                where: {
+                    id,
+                }
+            })
+
+            if (memory.userId !== request.user.sub) {
+                return reply.status(401).send();
             }
-        })
 
-        if (memory.userId !== request.user.sub) {
-            return reply.status(401).send();
+            memory = await prisma.memory.update({
+                where: {
+                    id,
+                },
+                data: {
+                    content,
+                    coverUrl,
+                    isPublic
+                }
+            })
+
+            return memory
         }
-
-        memory = await prisma.memory.update({
-            where: {
-                id,
-            },
-            data: {
-                content,
-                coverUrl,
-                isPublic
-            }
-        })
-
-        return memory
-    }})
+    })
 
 
     const paramsSchema = z.object({
