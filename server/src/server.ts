@@ -5,6 +5,7 @@ import jwt from '@fastify/jwt'
 import multipart from '@fastify/multipart'
 import swagger from '@fastify/swagger'
 import { resolve } from 'node:path'
+import { prisma } from './lib/prisma'
 import { authRoutes } from './routes/auth'
 import { memoriesRoutes } from './routes/memories'
 import { uploadRoutes } from './routes/upload'
@@ -54,8 +55,9 @@ app.register(require('@fastify/swagger-ui'), {
   staticCSP: true,
 })
 
-app.get('/hello', async () => {
-  return { hello: 'world' }
+app.get('/users', async () => {
+  const users = await prisma.user.findMany()
+  return users
 })
 
 // registrar um arquivo separado
@@ -69,5 +71,5 @@ app
     port: process.env.PORT ? Number(process.env.PORT) : 3333,
   })
   .then(() => {
-    console.log('HTTP server running')
+    console.log('HTTP server running on http://localhost:3333')
   })
