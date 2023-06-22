@@ -3,25 +3,27 @@ generator client {
 }
 
 datasource db {
-    provider = "postgresql"
+    provider = "sqlite"
     url      = env("DATABASE_URL")
 }
 
 model User {
-    id        String   @id @default(uuid())
-    githubId  Int      @unique
+    id        String @id @default(uuid())
+    githubId  Int    @unique
     name      String
     login     String
     avatarUrl String
-    memories  Memory[]
+
+    memories Memory[]
 }
 
 // Migration - esquema de controle de versão de 
 // banco de dados como se fosse um commit
 
 model Memory {
-    id        String  @id @default(uuid())
-    userId    String
+    id     String @id @default(uuid())
+    userId String
+
     coverUrl  String
     content   String
     isPublic  Boolean @default(false)
