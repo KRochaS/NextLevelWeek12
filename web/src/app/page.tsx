@@ -1,13 +1,13 @@
 import { EmptyMemories } from '@/components/EmptyMemories'
 import { api } from '@/lib/api'
 import dayjs from 'dayjs'
-import ptBr from 'dayjs/locale/pt-br'
+import en from 'dayjs/locale/en-ca'
 import { ArrowRight } from 'lucide-react'
 import { cookies } from 'next/headers'
 import Image from 'next/image'
 import Link from 'next/link'
 
-dayjs.locale(ptBr)
+dayjs.locale(en)
 interface Memory {
   id: string
   coverUrl: string
@@ -42,7 +42,7 @@ export default async function Home() {
           <div key={memory.id} className="space-y-4">
             <time className="text-small -ml-8 flex items-center gap-2 text-gray-100 before:h-px before:w-5 before:bg-gray-50">
               {' '}
-              {dayjs(memory.createdAt).format('D[ de ]MMMM[, ]YYYY')}
+              {dayjs(memory.createdAt).format('MMMM[ ]D[, ]YYYY')}
             </time>
 
             <Image
@@ -61,7 +61,7 @@ export default async function Home() {
               href={`/memories/${memory.id}`}
               className="flex items-center gap-2 text-sm text-gray-200 hover:text-gray-100"
             >
-              Ler mais
+              Read more
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
