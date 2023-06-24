@@ -1,10 +1,10 @@
 import { api } from '@/lib/api'
 import dayjs from 'dayjs'
-import ptBr from 'dayjs/locale/pt-br'
+import en from 'dayjs/locale/en-ca'
 import { cookies } from 'next/headers'
 import Image from 'next/image'
 
-dayjs.locale(ptBr)
+dayjs.locale(en)
 
 interface Params {
   params: {
@@ -35,7 +35,7 @@ export default async function MemoryDetailsPage({ params }: Params) {
       <div key={memory.id} className="space-y-4">
         <time className="text-small -ml-8 flex items-center gap-2 text-gray-100 before:h-px before:w-5 before:bg-gray-50">
           {' '}
-          {dayjs(memory.createdAt).format('D[ de ]MMMM[, ]YYYY')}
+          {dayjs(memory.createdAt).format('MMMM[ ]D[, ]YYYY')}
         </time>
 
         <Image
