@@ -78,7 +78,7 @@ export function NewMemoryForm() {
         </label>
 
         <InputMask
-          mask="99/99/9999"
+          mask="9999-99-99"
           name="createdAt"
           className="h-10 w-[120px] rounded border-gray-400 bg-gray-700 px-4 py-2 text-gray-100 placeholder:text-gray-400 focus:ring-0"
         />
