@@ -13,7 +13,7 @@ const discovery = {
     authorizationEndpoint: 'https://github.com/login/oauth/authorize',
     tokenEndpoint: 'https://github.com/login/oauth/access_token',
     revocationEndpoint: 'https://github.com/settings/connections/applications/1f2d3a4ceff1378f9de3',
-  };
+};
 
 export default function App() {
     const router = useRouter()
@@ -21,59 +21,60 @@ export default function App() {
 
     const [, response, signInWithGithub] = useAuthRequest(
         {
-          clientId: '1f2d3a4ceff1378f9de3',
-          scopes: ['identity'],
-          redirectUri: makeRedirectUri({
-            scheme: 'nlwspacetime'
-          }),
+            clientId: '1f2d3a4ceff1378f9de3',
+            scopes: ['identity'],
+            redirectUri: makeRedirectUri({
+                scheme: 'nlwspacetime'
+            }),
         },
         discovery
-      )
+    )
 
-      async function handleGithubOAuthCode(code: string) {
+    async function handleGithubOAuthCode(code: string) {
         const response = await api.post('/register', {
             code,
-          })
+        })
 
-          const {token} = response.data
-        
-          await SecureStore.setItemAsync('token', token)
+        const { token } = response.data
 
-          router.push('/memories')
-        }
-      
-    
-      useEffect(() => {
+        await SecureStore.setItemAsync('token', token)
+
+        router.push('/memories')
+    }
+
+
+    useEffect(() => {
         if (response?.type === 'success') {
-          const { code } = response.params;
-          handleGithubOAuthCode(code)
+            const { code } = response.params;
+            handleGithubOAuthCode(code)
         }
-      }, [response]);
+    }, [response]);
 
-    
+
     return (
         <View
             className="flex-1 items-center px-8 py-10"
         >
-    
+
             <View className="flex-1 items-center justify-center gap-6 px-8 py-10">
                 <NLWLogo />
 
                 <View className='space-y-2'>
-                    <Text className='text-center font-title text-2xl leading-tight text-gray-50'>Sua cápsula do tempo</Text>
+                    <Text className='text-center font-title text-2xl leading-tight text-gray-50'> Your time capsule</Text>
                     <Text className='text-center font-body text-base leading-relaxed text-gray-100'>
-                        Colecione momentos marcantes da sua jornada e compartilhe (se quiser) com o mundo!
+                        Collect memorable moments from your journey and share (if you like)
+                        with the world!
                     </Text>
                 </View>
 
                 <TouchableOpacity activeOpacity={0.7} onPress={() => signInWithGithub()}
                     className='rounded-full bg-green-500 px-5 py-2'
                 >
-                    <Text className='font alt text-sm uppercase text-black'> Cadastrar Lembrança</Text>
+                    <Text className='font alt text-sm uppercase text-black'> REGISTER MEMORY</Text>
                 </TouchableOpacity>
             </View>
 
-            <Text className='text-center font-body text-sm leading-relaxed text-gray-200'> Feito com 💜 no NLW da Rocketseat </Text>
+            <Text className='text-center font-body text-sm leading-relaxed text-gray-200'> Made with 💜 in Rocketseat's </Text>
             <StatusBar style="light" translucent />
         </View>
     )
