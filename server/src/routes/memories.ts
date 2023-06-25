@@ -17,21 +17,23 @@ export async function memoriesRoutes(app: FastifyInstance) {
 
     app.get('/memories', {
         schema: {
-            description: 'Lista de memórias',
+            description: 'list of memories',
             tags: ['memories'],
             response: {
                 200: {
-                    description: 'Obtém de memórias',
-                    type: 'array',
+                  type: 'array',
+                  items: {
+                    type: 'object',
                     properties: {
-                          token: { type: 'string' },
-                        id: { type: 'string' },
-                        coverUrl: { type: 'string' },
-                        excerpt: { type: 'string' },
-                        createdAt: { type: 'string' }
-                    },
-                },
-            },
+                      token: { type: 'string' },
+                      id: { type: 'string' },
+                      coverUrl: { type: 'string' },
+                      excerpt: { type: 'string' },
+                      createdAt: { type: 'string' }
+                    }
+                  }
+                }
+              }
         },
 
         handler: async (request) => {
@@ -60,9 +62,21 @@ export async function memoriesRoutes(app: FastifyInstance) {
     })
     app.get('/memories/:id', {
         schema: {
-            description: 'Obtem uma única memória refente ao id passado por parâmetro',
+            description: 'Gets a only memory',
             tags: ['memories'],
             params: parseSchema(paramsSchemaGetMemory),
+            response: {
+                200: {
+                    type: 'object',
+                    properties: {
+                          token: { type: 'string' },
+                        id: { type: 'string' },
+                        coverUrl: { type: 'string' },
+                        excerpt: { type: 'string' },
+                        createdAt: { type: 'string' }
+                    },
+                },
+            },
         },
         handler: async (request, reply) => {
             const { id } = paramsSchema.parse(request.params);
@@ -89,7 +103,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
 
     app.post('/memories', {
         schema: {
-            description: 'Salva uma memória',
+            description: 'Save a memory',
             tags: ['memories'],
             body: parseSchema(bodySchema),
         },
@@ -115,7 +129,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
     })
     app.put('/memories/:id', {
         schema: {
-            description: 'Altera uma memória',
+            description: 'Update a memory',
             tags: ['memories'],
             params: parseSchema(paramsSchemaMemory),
         },
@@ -165,7 +179,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
     app.delete('/memories/:id', {
 
         schema: {
-            description: 'Deleta uma memória',
+            description: 'Delete a memory',
             tags: ['memories'],
             params: parseSchema(paramsSchema),
         },
