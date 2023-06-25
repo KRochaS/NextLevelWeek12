@@ -32,7 +32,7 @@ app.register(swagger, {
     info: {
       title: 'API NLW Spacetime',
       description:
-        'Aplicação de recordação de memórias, onde o usuário poderá adicionar à uma timeline textos e fotos de acontecimentos marcantes da sua vida, organizados por mês e ano.',
+        'Memory recall application, where the user can add texts and photos of events in his life to a timeline, organized by month and year.',
       version: '0.0.1',
     },
     produces: ['application/json'],
