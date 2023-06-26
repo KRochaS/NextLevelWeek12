@@ -1,11 +1,12 @@
 import { api } from '@/lib/api'
 import dayjs from 'dayjs'
-import en from 'dayjs/locale/en-ca'
+import en from 'dayjs/locale/en'
+import utc from 'dayjs/plugin/utc'
 import { cookies } from 'next/headers'
 import Image from 'next/image'
 
 dayjs.locale(en)
-
+dayjs.extend(utc)
 interface Params {
   params: {
     memoryId: string
@@ -28,14 +29,13 @@ export default async function MemoryDetailsPage({ params }: Params) {
   })
 
   const memory = response.data
-  console.log(memory)
 
   return (
     <div className="flex flex-col gap-10 p-8">
       <div key={memory.id} className="space-y-4">
         <time className="text-small -ml-8 flex items-center gap-2 text-gray-100 before:h-px before:w-5 before:bg-gray-50">
           {' '}
-          {dayjs(memory.createdAt).format('MMMM[ ]D[, ]YYYY')}
+          {dayjs.utc(memory.createdAt).locale('en').format('MMMM D, YYYY')}
         </time>
 
         <Image
