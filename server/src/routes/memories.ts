@@ -69,10 +69,11 @@ export async function memoriesRoutes(app: FastifyInstance) {
                 200: {
                     type: 'object',
                     properties: {
-                          token: { type: 'string' },
                         id: { type: 'string' },
+                        userId: { type: 'string' },
                         coverUrl: { type: 'string' },
-                        excerpt: { type: 'string' },
+                        content: { type: 'string' },
+                        isPublic: { type: 'boolean' },
                         createdAt: { type: 'string' }
                     },
                 },
@@ -89,6 +90,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
                 return reply.status(401).send();
             }
 
+            console.log('MEMORY SERVER', memory)
             return memory;
         },
     });
