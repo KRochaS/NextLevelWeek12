@@ -60,7 +60,7 @@ export function NewMemoryForm() {
         >
           {' '}
           <Camera className="h-4 w-4" />
-          Anexar mídia{' '}
+          Add media{' '}
         </label>
 
         <label
@@ -74,7 +74,7 @@ export function NewMemoryForm() {
             value="true"
             className="border-gay-400 h-4 w-4 rounded bg-gray-700 text-purple-500"
           />
-          Tornar memória pública
+          Make public memory
         </label>
 
         <InputMask

@@ -16,8 +16,7 @@ export async function uploadRoutes(app: FastifyInstance) {
         tags: ['Autentication'],
         hide: true,
         response: {
-            200: {
-              description: 'Retorna a url do arquivo salvo',
+            200: {      
               type: 'object',
               properties: {
                 fileUrl: { type: 'string' },

@@ -12,8 +12,8 @@ export function SignIn() {
 
       <p className="max-w-[140px] text-sm leading-snug">
         {' '}
-        <span className="underline"> Crie sua conta </span> e salve suas
-        memórias!{' '}
+        <span className="underline"> Create your account </span> save your
+        memories!{' '}
       </p>
     </a>
   )
