@@ -19,7 +19,7 @@
 
 
 ## :bar_chart: About
- Time capsule application created to remember moments significant,
+ Time capsule application created to remember significant moments,
 allowing users to include texts and photos of events in their lives on a timeline organized by month and year.
 Made at Rocketseat's Next Level Week.
 
