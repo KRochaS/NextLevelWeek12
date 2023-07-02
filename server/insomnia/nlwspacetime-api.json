@@ -1,0 +1,263 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2023-07-02T02:05:35.431Z",
+    "__export_source": "insomnia.desktop.app:v2023.2.2",
+    "resources": [
+        {
+            "_id": "req_7a85ca9d99b743aa8ad6525e700d87b7",
+            "parentId": "fld_775b563d804643498101fbcf57655274",
+            "modified": 1688256039989,
+            "created": 1688256039989,
+            "url": "http://localhost:3333/memories/b5e0b760-6787-4046-afbb-ac52e34afe03",
+            "name": "Update a memory",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": \"b5e0b760-6787-4046-afbb-ac52e34afe03\",\n\t\"userId\": \"e71c1f95-c37f-42bb-88d7-a0760e32d838\",\n\t\"coverUrl\": \"http://192.168.1.18:3333/uploads/3b941ae7-a71f-4899-9b10-03b9aba20de3.jpg\",\n\t\"content\": \"My first coding job was a valuable learning experience where I gained knowledge about web scraping using technologies such as NodeJS, CheerioJS, and others.\",\n\t\"isPublic\": true,\n\t\"createdAt\": \"2017-08-02T00:00:00.000Z\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_0e5e517132b74994b11f17ce0f34ea03"
+                },
+                {
+                    "id": "pair_ee0cf951f15943619147fa39bd1fc9ba",
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FyaW5lIFJvY2hhIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzI3MDI2ODMxP3Y9NCIsInN1YiI6ImU3MWMxZjk1LWMzN2YtNDJiYi04OGQ3LWEwNzYwZTMyZDgzOCIsImlhdCI6MTY4NzU3MTI0NCwiZXhwIjoxNjkwMTYzMjQ0fQ.MHPbmpxBlkiuB-bY6CHDCfwZN6rMdmlwXj8zFkpdi4A",
+                    "description": ""
+                }
+            ],
+            "authentication": {
+                "type": "bearer"
+            },
+            "metaSortKey": -1687994035463,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_775b563d804643498101fbcf57655274",
+            "parentId": "wrk_5da926a667454e629400ecaae9d4f7bf",
+            "modified": 1688256039959,
+            "created": 1688256039959,
+            "name": "NLWSpacetime",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1000000000,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_5da926a667454e629400ecaae9d4f7bf",
+            "parentId": null,
+            "modified": 1684551208281,
+            "created": 1684551208281,
+            "name": "NLWSpacetime",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_f468e4b3401c43f9ad754be7ae0d558f",
+            "parentId": "fld_775b563d804643498101fbcf57655274",
+            "modified": 1688256039983,
+            "created": 1688256039983,
+            "url": "http://localhost:3333/memories/1fef5dad-dbc1-4f77-b5fc-fe53d9086ccf",
+            "name": "Delete a memory",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_0d89fb205fe544ee85f56b43f350999d",
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FyaW5lIFJvY2hhIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzI3MDI2ODMxP3Y9NCIsInN1YiI6ImU3MWMxZjk1LWMzN2YtNDJiYi04OGQ3LWEwNzYwZTMyZDgzOCIsImlhdCI6MTY4NzU3MTI0NCwiZXhwIjoxNjkwMTYzMjQ0fQ.MHPbmpxBlkiuB-bY6CHDCfwZN6rMdmlwXj8zFkpdi4A",
+                    "description": ""
+                }
+            ],
+            "authentication": {
+                "type": "bearer"
+            },
+            "metaSortKey": -1687994035413,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_d890726ceab84d4c90091cc97d1f9a56",
+            "parentId": "fld_775b563d804643498101fbcf57655274",
+            "modified": 1688256039975,
+            "created": 1688256039975,
+            "url": "http://192.168.1.18:3333/memories",
+            "name": "List of memories",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_607d451ebe274cc8bbce078e435c827d",
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FyaW5lIFJvY2hhIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzI3MDI2ODMxP3Y9NCIsInN1YiI6ImU3MWMxZjk1LWMzN2YtNDJiYi04OGQ3LWEwNzYwZTMyZDgzOCIsImlhdCI6MTY4NzU3MTI0NCwiZXhwIjoxNjkwMTYzMjQ0fQ.MHPbmpxBlkiuB-bY6CHDCfwZN6rMdmlwXj8zFkpdi4A",
+                    "description": ""
+                }
+            ],
+            "authentication": {
+                "type": "bearer"
+            },
+            "metaSortKey": -1687994035363,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_06f089e8dca143a5a4e6e4e6b3401b8e",
+            "parentId": "fld_775b563d804643498101fbcf57655274",
+            "modified": 1688256039970,
+            "created": 1688256039970,
+            "url": "http://localhost:3333/memories",
+            "name": "Save a memory",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"coverUrl\": \"http://192.168.1.18:3333/uploads/3b941ae7-a71f-4899-9b10-03b9aba20de3.jpg\",\n\t\"content\": \"I was so happy in my first job because was a opportunite to grow up and learn more about the techlogies.\\nI learned about web scrapping, extraction of data from a websites with NodeJS, CherioJS and MongoDB\",\n\t\"isPublic\": true,\n\t\"createdAt\": \"2017-08-02T00:00:00.000Z\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_4bbf5b9452774fbea3bad720391734a2"
+                },
+                {
+                    "id": "pair_8a26cfaaae184e8ebd5b8840ec73bfb1",
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FyaW5lIFJvY2hhIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzI3MDI2ODMxP3Y9NCIsInN1YiI6ImU3MWMxZjk1LWMzN2YtNDJiYi04OGQ3LWEwNzYwZTMyZDgzOCIsImlhdCI6MTY4NzMxMTE4MiwiZXhwIjoxNjg5OTAzMTgyfQ.3Nml5KnHtUjB3yJU8mZ3g4HmUyuN5P_OCuojHxf5IeU",
+                    "description": ""
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1687994035338,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_f24fff7d84ef47bd9a6981caa105a57f",
+            "parentId": "fld_775b563d804643498101fbcf57655274",
+            "modified": 1688256039962,
+            "created": 1688256039962,
+            "url": "http://localhost:3333/memories/b5e0b760-6787-4046-afbb-ac52e34afe03",
+            "name": "Memory",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_5194aaabe1f04ff7a9e58e21f4d2a733"
+                },
+                {
+                    "id": "pair_cbebcfa67e33400c945a215bb4c54d48",
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FyaW5lIFJvY2hhIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzI3MDI2ODMxP3Y9NCIsInN1YiI6ImU3MWMxZjk1LWMzN2YtNDJiYi04OGQ3LWEwNzYwZTMyZDgzOCIsImlhdCI6MTY4NzU3MTI0NCwiZXhwIjoxNjkwMTYzMjQ0fQ.MHPbmpxBlkiuB-bY6CHDCfwZN6rMdmlwXj8zFkpdi4A",
+                    "description": ""
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FyaW5lIFJvY2hhIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzI3MDI2ODMxP3Y9NCIsInN1YiI6IjVjZTc3NDQzLWI2NmYtNGRmMC1hYjc3LTZmYzFiNWI5NmRmNCIsImlhdCI6MTY4NDU1NDUzMiwiZXhwIjoxNjg3MTQ2NTMyfQ.MQod8q7vcZTwKHE0tXTA1wPkYsIYAhSNuzrpJDBaCeQ",
+                "prefix": "Authorization"
+            },
+            "metaSortKey": -1687994035313,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_f7277cc5516e049ef316df8a264a3388035bb02d",
+            "parentId": "wrk_5da926a667454e629400ecaae9d4f7bf",
+            "modified": 1684551208289,
+            "created": 1684551208289,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1684551208289,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_f7277cc5516e049ef316df8a264a3388035bb02d",
+            "parentId": "wrk_5da926a667454e629400ecaae9d4f7bf",
+            "modified": 1686705852882,
+            "created": 1684551208292,
+            "name": "Default Jar",
+            "cookies": [
+                {
+                    "key": "__cf_bm",
+                    "value": "jTl5tXAop5DsNrBDdqWYeSnwMeUfaHs7wyL44pYLtTg-1686705853-0-AbAdMsZLcbvZWUXSP2BwcC73Zy9X8YLQTPC8X3izW2BddW2s9FMtpEBQMspHe8EtzJpYKmF15gSJKgiDHvGH2JA=",
+                    "expires": "2023-06-14T01:54:13.000Z",
+                    "domain": "onrender.com",
+                    "path": "/",
+                    "secure": true,
+                    "httpOnly": true,
+                    "extensions": [
+                        "SameSite=None"
+                    ],
+                    "hostOnly": false,
+                    "creation": "2023-06-14T01:24:12.880Z",
+                    "lastAccessed": "2023-06-14T01:24:12.880Z",
+                    "id": "24259698739832491"
+                }
+            ],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_1086b426beae483e9b0b4a684bf12000",
+            "parentId": "wrk_5da926a667454e629400ecaae9d4f7bf",
+            "modified": 1684551208282,
+            "created": 1684551208282,
+            "fileName": "NLWSpacetime",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        }
+    ]
+}
