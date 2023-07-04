@@ -36,6 +36,7 @@ Made at Rocketseat's Next Level Week.
 
 
 <p align="center">
+   <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-00.png" width="986" >
   <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-01.png" width="986" >
   <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-02.png" width="986" >
 </p>
@@ -43,6 +44,8 @@ Made at Rocketseat's Next Level Week.
 
 #### how to run the project: 
 ```bash
+# Configuration NEXT_PUBLIC_GITHUB_CLIENT_ID at env.local
+
 #  Clone this repository.
 $ git clone https://github.com/KRochaS/NextLevelWeek12.git
 
