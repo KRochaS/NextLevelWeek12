@@ -44,6 +44,8 @@ Made at Rocketseat's Next Level Week.
 
 #### how to run the project: 
 ```bash
+# Configuration NEXT_PUBLIC_GITHUB_CLIENT_ID at env.local
+
 #  Clone this repository.
 $ git clone https://github.com/KRochaS/NextLevelWeek12.git
 
