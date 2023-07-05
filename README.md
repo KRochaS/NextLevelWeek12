@@ -81,9 +81,9 @@ $ npm run dev
 
 <p align="center">
    <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-backend.PNG"  width="986" >
-   <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-swagger-01.png"  width="986" >
-  <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-swagger-02.png"  width="986" >
-   <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-swagger-04.png"  width="986">
+   <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-swagger-001.png"  width="986" >
+  <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-swagger-002.png"  width="986" >
+   <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-swagger-003.png"  width="986">
 </p>
 
 #### how to run the project: 
@@ -120,10 +120,6 @@ $ npm run dev
 You can import the [Insomnia](https://insomnia.rest/) Workspace by using the button below:
 
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=API%20-%20NLWSpacetime&uri=https%3A%2F%2Fgithub.com%2FKRochaS%2FNextLevelWeek12%2Fblob%2Fmaster%2Fserver%2Finsomnia%2Fnlwspacetime-api.json)
-
-
-
-
 
 ## :iphone:  Mobile
 
