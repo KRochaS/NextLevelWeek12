@@ -34,6 +34,9 @@ Made at Rocketseat's Next Level Week.
 - [Axios](https://axios-http.com/)
 - [DayJS](https://day.js.org/)
 
+##### New Implementations:    
+- The user has the possibility to type the memory date.
+- The memory's detail page accessible by clicking on 'read more'.
 
 <p align="center">
    <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-000.png" width="986" >
@@ -41,13 +44,13 @@ Made at Rocketseat's Next Level Week.
   <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-02.png" width="986" >
 </p>
 
-
 #### how to run the project: 
 ```bash
-# Configuration NEXT_PUBLIC_GITHUB_CLIENT_ID at env.local
-
 #  Clone this repository.
 $ git clone https://github.com/KRochaS/NextLevelWeek12.git
+
+# Configure OAuth on GitHub and add the necessary information to the .env.local file
+# NEXT_PUBLIC_GITHUB_CLIENT_ID=<YOUR_CLIENT_ID>
 
 # Navigate to the project folder in the terminal/cmd.
 $ cd web/
@@ -60,14 +63,9 @@ $ npm run dev
 
 # client and server successfully
 ```
+## :desktop_computer: Backend
 
-  ##### Mobile:                                                               
-- [React Native](https://reactnative.dev/)
-- [Typescript](https://www.typescriptlang.org/)
-- [Expo](https://expo.dev/)
-- [NativeWind](https://www.nativewind.dev/)
-
-  ##### Backend:                                                               
+##### Technologies and libs:                                                                
 - [NodeJS](https://nodejs.org/en)
 - [Typescript](https://www.typescriptlang.org/)
 - [Fastify](https://fastify.dev/)
@@ -77,32 +75,47 @@ $ npm run dev
 - [Swagger](https://swagger.io/)
 - [Zod](https://zod.dev/)
 
-
-
-
-
-
-
-## :iphone: Mobile
+##### New Implementations:    
+- Save the date type by the user in the database.
+- API documentation with Swagger.
 
 <p align="center">
-   <img src=""  width="986" >
-   <img src=""  width="986" >
-  <img src=""  width="986" >
-
+   <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-backend.PNG"  width="986" >
+   <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-swagger-01.png"  width="986" >
+  <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-swagger-02.png"  width="986" >
+   <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-swagger-04.png"  width="986">
 </p>
 
-## :desktop_computer: Backend
+#### how to run the project: 
 
-<p align="center">
-   <img src=""  width="986" >
-   <img src=""  width="986" >
-  <img src=""  width="986" >
+```bash
 
-</p>
+#  Clone this repository.
+$ git clone https://github.com/KRochaS/NextLevelWeek12.git
 
-<br/>
-<br/>
+# Configure OAuth on GitHub and add the necessary information to the .env file 
+# for web and mobile applications
+#  GITHUB (Web)
+# GITHUB_CLIENT_ID=<YOUR_CLIENT_ID>
+# GITHUB_CLIENT_SECRET=<YOUR_CLIENT_SECRET_ID>
+# GITHUB (Mobile)
+# GITHUB_CLIENT_ID=<YOUR_CLIENT_ID>
+# GITHUB_CLIENT_SECRET=<YOUR_CLIENT_SECRET_ID>
+
+# Configure Database in .env file
+# DATABASE_URL="file:./dev.db"
+
+# Navigate to the project folder in the terminal/cmd.
+$ cd server/
+
+# Install the dependencies.
+$ npm i ou yarn install
+
+# Run the project
+$ npm run dev
+
+# HTTP server running on http://localhost:3333
+```
 
 You can import the [Insomnia](https://insomnia.rest/) Workspace by using the button below:
 
@@ -112,11 +125,42 @@ You can import the [Insomnia](https://insomnia.rest/) Workspace by using the but
 
 
 
-## :wrench: Rodar o projeto
+## :iphone:  Mobile
+
+##### Technologies and libs:                                                                
+- [React Native](https://reactnative.dev/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Expo](https://expo.dev/)
+- [NativeWind](https://www.nativewind.dev/)
+
+
+<p align="center">
+   <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-mobile-01.jpg"  width="260" >
+   <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-mobile-02.jpg"  width="260" >
+    <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-mobile-03.jpg"  width="260" >
+    <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-mobile-04.jpg"  width="260" >
+    <img src="https://github.com/KRochaS/NextLevelWeek12/blob/master/.github/screenshot-mobile-05.jpg"  width="260" >
+  <img src=""  width="986" >
+</p>
+
+#### how to run the project: 
 
 ```bash
 
+#  Clone this repository.
+$ git clone https://github.com/KRochaS/NextLevelWeek12.git
+
+# Navigate to the project folder in the terminal/cmd.
+$ cd mobile/
+
+# Install the dependencies.
+$ npm i ou yarn install
+
+# Run the project
+$  npx expo start
 ```
+
+
 
 
 
