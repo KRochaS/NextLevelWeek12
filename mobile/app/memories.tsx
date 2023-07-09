@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
 import Icon from '@expo/vector-icons/Feather';
 import dayjs from 'dayjs';
-import ptBr from 'dayjs/locale/pt-br';
+import en from 'dayjs/locale/en';
+import utc from 'dayjs/plugin/utc';
 import { Link, useRouter } from 'expo-router';
 import * as SecureStore from 'expo-secure-store';
 import { useEffect, useState } from 'react';
@@ -11,7 +12,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { api } from '../src/assets/lib/api';
 import NLWLogo from '../src/assets/nlw-spacetime-logo.svg';
 
-dayjs.locale(ptBr);
+dayjs.locale(en)
+dayjs.extend(utc)
 interface Memory {
     coverUrl: string;
     excerpt: string;
@@ -80,7 +82,7 @@ export default function Memories() {
                   <View className="flex-row items-center gap-2">
                     <View className="h-px w-5 bg-gray-300" />
                     <Text className="font-body text-sm text-gray-100">
-                      {dayjs(memory.createdAt).format('D[ de ]MMMM[, ]YYYY')}
+                    {dayjs.utc(memory.createdAt).locale('en').format('MMMM D, YYYY')}
                     </Text>
                   </View>
                   <View className="space-y-4 px-8">
@@ -97,7 +99,7 @@ export default function Memories() {
                     <Link href="/memories/id" asChild>
                       <TouchableOpacity className="flex-row items-center gap-2">
                         <Text className="font-body text-sm text-gray-200">
-                          Ler mais
+                          Read more
                         </Text>
                         <Icon name="arrow-right" size={16} color="#9e9ea0" />
                       </TouchableOpacity>

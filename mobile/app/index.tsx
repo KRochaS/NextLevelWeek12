@@ -74,7 +74,7 @@ export default function App() {
                 </TouchableOpacity>
             </View>
 
-            <Text className='text-center font-body text-sm leading-relaxed text-gray-200'> Made with 💜 in Rocketseat's </Text>
+            <Text className='text-center font-body text-sm leading-relaxed text-gray-200'> Made with 💜 in Rocketseat's NLW</Text>
             <StatusBar style="light" translucent />
         </View>
     )

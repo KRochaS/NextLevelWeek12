@@ -105,7 +105,7 @@ export default function NewMemory() {
           />
           <Text className="font-body text-base text-gray-200">
             {' '}
-            Tornar memória pública{' '}
+            Make public memory{' '}
           </Text>
         </View>
 
@@ -120,7 +120,7 @@ export default function NewMemory() {
             <View className="flex-row items-center gap-2">
             <Icon name="image" color="#fff" />
             <Text className="font-body text-sm text-gray-200">
-              Adicionar foto ou vídeo de capa
+            Add cover photo
             </Text>
           </View>
           )}
@@ -132,7 +132,7 @@ export default function NewMemory() {
           onChangeText={setContent}
           className="p-0 font-body text-lg text-gray-50"
           placeholderTextColor="#56565a"
-          placeholder="Fique livre para adicionar fotos, vídeos e relatos sobre essa experiência que você quer lembrar para sempre."
+          placeholder="Feel free to add photos and stories about that experience"
         />
 
         <TouchableOpacity
@@ -140,7 +140,7 @@ export default function NewMemory() {
           onPress={handleCreateMemory}
           className="items-center self-end rounded-full bg-green-500 px-5 py-2"
         >
-          <Text className="font alt text-sm uppercase text-black">Salvar</Text>
+          <Text className="font alt text-sm uppercase text-black">Save</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
